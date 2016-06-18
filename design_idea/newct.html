@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Neues CT planen - CTDeutschland</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/ctde.css" rel="stylesheet">
+    
+    <!-- DateTime Picker jQuery by XDSoft -->
+    <link href="css/jquery.datetimepicker.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="brand">CTDeutschland</div>
+    <div class="slogan-bar">Lass Treffen einfach Treffen sein!</div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" href="index.html">CTDeutschland</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="cts.html">CTs</a>
+                    </li>
+                    <li>
+                        <a href="profil.html">Mein Profil</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="box">
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="text-center">Neues CT erstellen</h2>
+                    <hr>
+                </div>
+                <div class="col-sm-12 text-center">
+                    <form role="form" action="editct.html" method="post" accept-charset="utf-8">
+                        <div class="row">
+                            <div class="form-group col-lg-12">
+                                <label>CT Name</label><br>
+                                <small>(Ohne # am Anfang, nur A-Z und Zahlen, keine Leer-/Sonderzeichen)</small><br>
+                                <label id="icon" for="ctname">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                </label>
+                                <input name="ctname" id="ctname" type="text" placeholder="MeinEigenesCT" required>
+                                <hr>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label>Beschreibung</label><br>
+                                <small>(Erlaubte Formatierungs-Zeichen sind &lt;b&gt;<b>fett</b>&lt;/b&gt;, &lt;i&gt;<i>kursiv</i>&lt;/i&gt; und &lt;u&gt;<u>unterstrichen</u>&lt;/u&gt;)</small>
+                                <textarea class="form-control" rows="6" maxlength="2048" placeholder="Hier sollte eine aussagekräftige Beschreibung zum CT stehen, z.B. wo genau man sich trifft, was mitgebracht werden soll, usw" required></textarea>
+                                <hr>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label>Doodle aktivieren?</label>
+                                <div id="doodleradios">
+                                    <input type="radio" value="yes" id="raddoodleOne" name="doodle">
+                                    <label for="raddoodleOne"  class="radio">Ja</label>
+                                    <input type="radio" value="no" id="raddoodleTwo" name="doodle" checked="">
+                                    <label for="raddoodleTwo"  class="radio">Nein</label>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-12" id="timeinput">
+                                <label>Datum</label><br>
+                                <label id="icon" for="cttime">
+                                    <i class="glyphicon glyphicon-time"></i>
+                                </label>
+                                <input type="text" name="cttime" id="cttime" required>
+                            </div>
+                            <div class="form-group col-lg-12" id="doodleinput" style="display:none;">
+                                <label>Doodle-ID</label><br>
+                                <small>Nicht die gesamte Doodle URL. Nur den letzten Part. Beispiel: http://doodle.com/<b>hfds3hj4k39d</b> wid zur <b>hfds3hj4k39d</b></small><br>
+                                <label id="icon" for="ctdoodle">
+                                    <i class="glyphicon glyphicon-book"></i>
+                                </label>
+                                <input type="text" id="ctdoodle" name="ctdoodle">
+                                <hr>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label>Ort</label><br>
+                                <label id="icon" for="ctname">
+                                    <i class="glyphicon glyphicon-globe"></i>
+                                </label>
+                                <input type="text" id="ctplace" name="ctplace" required>
+                                <hr>
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <label>CT öffentlich in der Liste anzeigen?</label>
+                                <div id="privacyradios">
+                                    <input type="radio" value="yes" id="radprivacyOne" name="privacy" checked="">
+                                    <label for="radprivacyOne" class="radio">Ja</label>
+                                    <input type="radio" value="no" id="radprivacyTwo" name="privacy">
+                                    <label for="radprivacyTwo"  class="radio">Nein</label>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="form-goup col-lg-12">
+                                <input name="checkagb" id="checkagb" type="checkbox" required>
+                                <label for="checkagb" class="checkbox">Ich habe die AGB gelesen und aktzeptiere sie.</label>
+                            </div>
+                            <div class="form-group col-lg-12 text-center">
+                            <a type="submit" id="buttonsub" class="button" onclick="$('#submitterb').trigger('click');">CT ERSTELLEN</a>
+                            </div>
+                        </div>
+                        <button id="submitterb" type="submit" style="display:none;"></button>
+                    </form>
+                </div>
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>Copyright &copy; CTDeutschland 2015<br>
+                    <a href="impressum.html">Impressum</a> | <a href="agb.html">AGB</a> | <a href="datenschutz.html">Datenschutz</a> | <a href="help">Hilfe &amp; FAQs</a> | <a href="news.html">News</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Modal -->
+<div class="modal fade" id="dataDeleteCT" tabindex="-1" role="dialog" aria-labelledby="dataDeleteCTLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">CT LÖSCHEN</h4>
+      </div>
+      <div class="modal-body">
+        <p>Bist du dir sicher, dass du #CTName löschen willst?</p><br>
+          <small>Gelöschte CTs können nicht wiederhergestellt werden.<br>Außerdem werden die eingetragenen Gäste <b>NICHT</b> darüber informiert, dass dieses CT gelöscht wurde.</small>
+      </div>
+      <div class="modal-footer">
+          <form method="post" action="deletect.html">
+              <input type="hidden" name="reallysure" value="yes">
+              <input type="hidden" name="ctid" value="InsertWithPHPAndCheckOwnerAfterwards">
+              <button type="submit" class="btn btn-danger">Löschen</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Schließen</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script> 
+    
+    <!-- DateTime Picker jQuery by XDSoft -->
+    <script src="js/jquery.datetimepicker.full.min.js"></script>
+    
+    <!-- Maps Api Autocomplete -->
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB362bAj7q0-3N62OjBB5QEUQ-2Ht8ZvZY&libraries=places"></script>
+    <script>
+        //Google Maps Autocomplete Setup
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('ctplace')),
+            {types: ['geocode']});
+        
+    
+        //other stuff
+        $(document).ready(function() {
+            //DateTime Picker setup
+            $('#cttime').datetimepicker({
+                startDate:'+02.11.2015 12:29',
+                minDate:'02.11.2015 12:00',
+                format:'d.m.Y H:i',
+                mask:true,
+                lang:'de'
+            });
+            $('input[type=radio][name=doodle]').change(function() {
+                if (this.value == 'no') {
+                    $('#doodleinput').stop(true, true).slideUp(400, function(){//hide
+                    $('#timeinput').stop(true, true).slideDown(400);});//show
+                    $('#ctdoodle').removeAttr('required');
+                    $('#cttime').prop('required',true);
+                }else if (this.value == 'yes') {
+                    $('#timeinput').stop(true, true).slideUp(400, function(){//hide
+                    $('#doodleinput').stop(true, true).slideDown(400);});//show
+                    $('#cttime').removeAttr('required');
+                    $('#ctdoodle').prop('required',true);
+                }
+            });
+        });
+    
+    </script>
+    </body>
+
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+    <url>
+        <loc>http://ctdeutschland.tk/cts</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>http://ctdeutschland.tk/index</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://ctdeutschland.tk/faq</loc>
+        <changefreq>weekly</changefreq>
+    </url>
+    <url>
+        <loc>http://ctdeutschland.tk/agb</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>http://ctdeutschland.tk/datenschutz</loc>
+        <changefreq>monthly</changefreq>
+    </url>
+</urlset>
