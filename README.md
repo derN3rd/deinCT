@@ -2,4 +2,5 @@
 Quellcode von deinCT
 
 
-Code kommt demnächst!
+Dieser Code steht unter Copyright.
+Die kommerzielle Nutzung ist untersagt!
