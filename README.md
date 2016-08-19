@@ -3,4 +3,4 @@ Quellcode von deinCT
 
 
 Dieser Code steht unter Copyright.
-Die kommerzielle Nutzung ist untersagt!
+Die private UND kommerzielle Nutzung ist untersagt!
